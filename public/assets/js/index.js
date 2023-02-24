@@ -4,6 +4,14 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+const express = require('express');
+const app = express();
+const port = 3001; 
+
+app.get('/', (req, res) => res.send('hello world'));
+app.listen(process.env.PORT || port, () => console.log(`example app listening at http://localhost:${port}`));
+
+
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
