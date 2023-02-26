@@ -4,24 +4,6 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
-const express = require('express');
-const app = express();
-const port = 3000;
-const path = require('path'); 
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-app.get('/notes', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'notes.html'));
-});
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
-
-app.listen(process.env.PORT || port, () => console.log(`example app listening at http://localhost:${port}`));
-
-
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
@@ -124,7 +106,6 @@ const handleNoteView = (e) => {
 const handleNewNoteView = (e) => {
   activeNote = {};
   renderActiveNote();
-  getAndRenderNotes(); 
 };
 
 const handleRenderSaveBtn = () => {
@@ -139,7 +120,7 @@ const handleRenderSaveBtn = () => {
 const renderNoteList = async (notes) => {
   let jsonNotes = await notes.json();
   if (window.location.pathname === '/notes') {
-    Array.from(noteList).forEach((el) => (el.innerHTML = ''));
+    noteList.forEach((el) => (el.innerHTML = ''));
   }
 
   let noteListItems = [];
