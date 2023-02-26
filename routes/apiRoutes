@@ -5,6 +5,7 @@ let db = require('../db/db.json');
 
 app.get('/notes', (req, res) => {
   db = JSON.parse(fs.readFileSync('./db/db.json', 'utf-8'))
+
   res.json(db);
 
 });
@@ -50,3 +51,5 @@ app.delete('/notes/:id', (req, res) => {
   res.json(db);
 
 });
+
+module.exports = app;
