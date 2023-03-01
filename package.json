@@ -1,24 +1,19 @@
 {
   "name": "note-taker",
   "version": "1.0.0",
-  "description": "## Your Task",
+  "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "devStart": "nodemon server.js"
   },
+  "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.4"
+    "express": "^4.17.1",
+    "uuid": "^9.0.0"
   },
-  "devDependencies": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/SoftPoachedEggs/Note-Taker-Build.git"
-  },
-  "bugs": {
-    "url": "https://github.com/SoftPoachedEggs/Note-Taker-Build/issues"
-  },
-  "homepage": "https://github.com/SoftPoachedEggs/Note-Taker-Build#readme"
+  "devDependencies": {
+    "nodemon": "2.0.12"
+  }
 }
