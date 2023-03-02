@@ -1,14 +1,14 @@
 let noteTitle;
 let noteText;
 let saveNoteBtn;
-let saveNoteBtn;
+let newNoteBtn;
 let noteList;
 
 if (window.location.pathname === '/notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
-  saveNoteBtn = document.querySelector('.new-note');
+  newNoteBtn = document.querySelector('.new-note');
   noteList = document.querySelectorAll('.list-container .list-group');
 }
 
@@ -67,11 +67,11 @@ const renderActiveNote = () => {
 };
 
 const handleNoteSave = () => {
-  const saveNote = {
+  const newNote = {
     title: noteTitle.value,
     text: noteText.value,
   };
-  saveNote(saveNote).then(() => {
+  saveNote(newNote).then(() => {
     getAndRenderNotes();
     renderActiveNote();
   });
@@ -103,7 +103,7 @@ const handleNoteView = (e) => {
 };
 
 // Sets the activeNote to and empty object and allows the user to enter a new note
-const handlesaveNoteView = (e) => {
+const handleNewNoteView = (e) => {
   activeNote = {};
   renderActiveNote();
 };
@@ -175,7 +175,7 @@ const getAndRenderNotes = () => getNotes().then(renderNoteList);
 
 if (window.location.pathname === '/notes') {
   saveNoteBtn.addEventListener('click', handleNoteSave);
-  saveNoteBtn.addEventListener('click', handlesaveNoteView);
+  newNoteBtn.addEventListener('click', handleNewNoteView);
   noteTitle.addEventListener('keyup', handleRenderSaveBtn);
   noteText.addEventListener('keyup', handleRenderSaveBtn);
 }
