@@ -13,7 +13,7 @@ This simple web app is designed to store and retrieve user notes using Express.J
 ## Install
 Install package.json using "npm install" in root directory. Activate server by using "node server.js" Once app is listening on port 3003, visit http://localhost:3003/ to use app.
 ## Visual
-![Visual](./assets/images/note-taker-screen.png)
+![Visual](./public/assets/images/note-taker-screen.jpeg)
 ## Use
 For educational purposes only.
 ## Contributing
